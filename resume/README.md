@@ -4,13 +4,4 @@ In this Project you can also generate the pdf by clicking on the Print button.
 
 https://github.com/yash42828/Resume-Builder-Using-FLask
 
-## Screenshots
-![Header Image](./1.png)
 
-![Header Image](./2.png)
-
-![Header Image](./3.png)
-
-![Header Image](./4.png)
-
-![Header Image](./5.png)
