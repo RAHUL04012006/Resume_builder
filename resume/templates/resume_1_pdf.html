@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ data.name }}'s Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.5;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #3498db;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .info-item {
+            margin-bottom: 8px;
+        }
+        .info-icon {
+            color: #3498db;
+            margin-right: 10px;
+            width: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .education-item {
+            margin-bottom: 15px;
+        }
+        .course-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ data.name }}</h1>
+        <p>{{ data.about }}</p>
+    </header>
+
+    <div class="section">
+        <div class="section-title">ABOUT ME</div>
+        <div class="info-item">
+            <span class="info-icon">🎂</span>
+            <span>{{ data.dob }}</span>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">📱</span>
+            <span>{{ data.phone }}</span>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">📍</span>
+            <span>{{ data.city }}, {{ data.state }}</span>
+        </div>
+        <div class="info-item">
+            <span class="info-icon">📧</span>
+            <span>{{ data.email }}</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">CAREER OBJECTIVES</div>
+        <p>{{ data.career_objective }}</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">EDUCATION</div>
+        {% if data.education %}
+            {% for edu in data.education %}
+                <div class="education-item">
+                    <div class="course-name">{{ edu.course }}</div>
+                    <div>{{ edu.college }}</div>
+                    <div>Graduated, {{ edu.graduation }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="education-item">
+                <div class="course-name">B.Tech Computer Science</div>
+                <div>ABC University</div>
+                <div>Graduate, March 2022</div>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="section">
+        <div class="section-title">ACHIEVEMENTS</div>
+        <ul>
+            {% if data.achievements %}
+                {% for achievement in data.achievements %}
+                    <li>{{ achievement }}</li>
+                {% endfor %}
+            {% else %}
+                <li>Developed or implemented new procedures or systems</li>
+                <li>Got 1st rank in coding competition</li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PERSONAL SKILLS</div>
+        <ul>
+            {% if data.skills %}
+                {% for skill in data.skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            {% else %}
+                <li>Good communication skills</li>
+                <li>Good team player</li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PERSONAL DETAILS</div>
+        <div>Father's Name: {{ data.father_name }}</div>
+        <div>Mother's Name: {{ data.mother_name }}</div>
+        <div>Permanent Address: {{ data.address }}</div>
+    </div>
+
+    <div class="section" style="margin-top: 40px;">
+        <h3>Declaration</h3>
+        <p>I, {{ data.name }}, hereby declare that all the information provided above are correct and complete to the best of my knowledge and belief. I understand that if any time it is found that any information given is false, my appointment is liable to be cancelled.</p>
+        <div style="margin-top: 20px;">
+            <div style="float: left;">
+                ____________________________<br>
+                {{ data.name }}
+            </div>
+            <div style="float: right;">
+                {{ data.city }}, {{ data.state }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

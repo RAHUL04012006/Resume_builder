@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ data.name }}'s Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .left-column {
+            width: 35%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .right-column {
+            width: 65%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-header h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .profile-header p {
+            color: #ecf0f1;
+            margin: 0;
+            font-size: 16px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-title {
+            color: #3498db;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .contact-icon {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .skills-list li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        .education-item {
+            margin-bottom: 20px;
+        }
+        .education-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        .education-subtitle {
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+        .education-date {
+            color: #3498db;
+            font-size: 14px;
+        }
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+        .achievements-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .achievements-list li:before {
+            content: "✓";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        .declaration {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .signature {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <div class="profile-header">
+                <h1>{{ data.name }}</h1>
+                <p>{{ data.about }}</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Contact</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>{{ data.phone }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>{{ data.email }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>{{ data.city }}, {{ data.state }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🎂</span>
+                        <span>{{ data.dob }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Personal Skills</div>
+                <ul class="skills-list">
+                    {% if data.skills %}
+                        {% for skill in data.skills %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>Good communication skills</li>
+                        <li>Good team player</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Personal Details</div>
+                <div style="color: #ecf0f1;">
+                    <div style="margin-bottom: 10px;">Father's Name: {{ data.father_name }}</div>
+                    <div style="margin-bottom: 10px;">Mother's Name: {{ data.mother_name }}</div>
+                    <div>Permanent Address: {{ data.address }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="section">
+                <div class="section-title">Career Objective</div>
+                <p>{{ data.career_objective }}</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                {% if data.education %}
+                    {% for edu in data.education %}
+                        <div class="education-item">
+                            <div class="education-title">{{ edu.course }}</div>
+                            <div class="education-subtitle">{{ edu.college }}</div>
+                            <div class="education-date">Graduated, {{ edu.graduation }}</div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="education-item">
+                        <div class="education-title">B.Sc Computer Science</div>
+                        <div class="education-subtitle">ABC University</div>
+                        <div class="education-date">Graduate, May 2022</div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="section">
+                <div class="section-title">Achievements</div>
+                <ul class="achievements-list">
+                    {% if data.achievements %}
+                        {% for achievement in data.achievements %}
+                            <li>{{ achievement }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>Got 1st rank in coding competition</li>
+                        <li>State level badminton player</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="declaration">
+                <h3>Declaration</h3>
+                <p>I, {{ data.name }}, hereby declare that all the information provided above are correct and complete to the best of my knowledge and belief. I understand that if any time it is found that any information given is false, my appointment is liable to be cancelled.</p>
+                <div class="signature">
+                    <div>
+                        ____________________________<br>
+                        {{ data.name }}
+                    </div>
+                    <div>
+                        {{ data.city }}, {{ data.state }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

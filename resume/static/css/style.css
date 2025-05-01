@@ -1,0 +1,547 @@
+/* Modern Resume Builder Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--primary-color);
+    padding: 20px 0;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo h2 {
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    font-size: 28px;
+}
+
+header .logo p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 14px;
+}
+
+header .nav_button_right {
+    float: right;
+    padding: 10px;
+}
+
+.btn {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.btn-info {
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background-color: white;
+    border: none;
+    color: var(--primary-color);
+}
+
+.btn-light:hover {
+    background-color: #f8f9fa;
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+    color: white;
+    padding: 180px 0 100px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-section h4 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-section p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+}
+
+/* Template View Section */
+#template_view {
+    padding: 100px 0 70px;
+    background-color: white;
+}
+
+#template_view h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#template_view h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+#template_view p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+#template_view img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.b_resume {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.b_resume_btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Templates Section */
+#templates {
+    padding: 80px 0;
+    background-color: #f5f7fa;
+}
+
+#templates h2 {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#templates p {
+    text-align: center;
+    padding-bottom: 30px;
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+#templates img {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    margin-bottom: 30px;
+}
+
+.template-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    margin-bottom: 30px;
+}
+
+.template-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.template-card img {
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+}
+
+.template-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.template-card-content h4 {
+    margin: 0 0 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.template-card-content p {
+    margin: 0 0 15px;
+    color: var(--text-light);
+    padding-bottom: 0;
+    font-size: 14px;
+}
+
+.template-card-content .btn {
+    margin-top: 10px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.benefits-section h2 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.benefit-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.benefit-icon {
+    font-size: 40px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.benefit-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 0;
+    background-color: #f5f7fa;
+}
+
+.features-section h2 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer p, .footer a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Authentication Pages */
+.login-container,
+.signup-container {
+    max-width: 450px;
+    margin: 150px auto 100px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.login-header,
+.signup-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2,
+.signup-header h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.login-header p,
+.signup-header p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.login-link,
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* For Resume Templates */
+.subsection {
+    background-color: var(--primary-color);
+    height: 50px;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* For popup */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 15;
+    overflow: auto;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    width: 80%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.popup .close:hover {
+    color: var(--secondary-color);
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header .logo h2 {
+        font-size: 24px;
+    }
+    
+    header .nav_button_right {
+        float: none;
+        clear: both;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .hero-section {
+        padding-top: 200px;
+    }
+    
+    .hero-section h1 {
+        font-size: 36px;
+    }
+    
+    .hero-section h4 {
+        font-size: 18px;
+    }
+    
+    #template_view h1 {
+        font-size: 28px;
+    }
+    
+    #template_view h3 {
+        font-size: 20px;
+    }
+    
+    .popup {
+        width: 90%;
+        margin: 50px auto;
+    }
+}

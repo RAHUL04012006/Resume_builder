@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Resume Builder</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .signup-container {
+            max-width: 450px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-success {
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        .form-control {
+            padding: 12px;
+            border-radius: 5px;
+        }
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .signup-header h2 {
+            color: #333;
+            font-weight: 600;
+        }
+        .alert {
+            margin-bottom: 20px;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2>RESUME BUILDER</h2>
+                <p>Professional Resume Creation Tool</p>
+            </div>
+            <div class="nav_button_right">
+                <a href="/" class="btn btn-light">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="signup-container">
+            <div class="signup-header">
+                <h2>Create an Account</h2>
+                <p>Join Resume Builder to create professional resumes</p>
+            </div>
+            
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+            
+            <form method="POST" action="/signup">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="username" name="username" required placeholder="Choose a username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" id="password" name="password" required placeholder="Choose a strong password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required placeholder="Confirm your password">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Create Account</button>
+            </form>
+            
+            <div class="login-link">
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+            
+            <div class="login-link">
+                <a href="/">Back to Home</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Resume Builder</h4>
+                    <p>Create professional resumes that stand out and get you noticed by employers.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/resume_template">Templates</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> kwalitytimekumar2006@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../static/js/jquery-2.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

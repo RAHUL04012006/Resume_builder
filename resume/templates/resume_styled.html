@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - Resume</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+            color: #000;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #4285f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        .section-icon i {
+            color: white;
+            font-size: 14px;
+        }
+        .section-heading {
+            color: #333;
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 15px 0;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            background-color: #4285f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        .info-icon i {
+            color: white;
+            font-size: 12px;
+        }
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .education-item {
+            margin-bottom: 10px;
+        }
+        .education-title {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .education-subtitle {
+            margin: 0;
+            color: #666;
+        }
+        .graduation-date {
+            text-align: right;
+        }
+        .skills-list,
+        .achievements-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .skills-list li,
+        .achievements-list li {
+            margin-bottom: 5px;
+        }
+        .declaration {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .signature {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .signature .left,
+        .signature .right {
+            width: 48%;
+        }
+        .signature-line {
+            border-top: 1px solid #333;
+            margin-top: 5px;
+            width: 150px;
+        }
+        .footer {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        .education-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .education-left {
+            flex: 1;
+        }
+        .education-right {
+            text-align: right;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ data.name }}</h1>
+        </div>
+        
+        <!-- About Section -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon">
+                    <i>i</i>
+                </div>
+                <h2 class="section-heading">ABOUT ME</h2>
+            </div>
+            <div class="divider"></div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <i>d</i>
+                </div>
+                <div>{{ data.dob }}</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <i>p</i>
+                </div>
+                <div>{{ data.phnum }}</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <i>l</i>
+                </div>
+                <div>{{ data.city }}, {{ data.state }}</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <i>@</i>
+                </div>
+                <div>{{ data.email }}</div>
+            </div>
+        </div>
+        
+        <!-- Career Objectives -->
+        {% if data.ucareerob %}
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon">
+                    <i>c</i>
+                </div>
+                <h2 class="section-heading">CAREER OBJECTIVES</h2>
+            </div>
+            <div>{{ data.ucareerob }}</div>
+        </div>
+        {% endif %}
+        
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon">
+                    <i>e</i>
+                </div>
+                <h2 class="section-heading">EDUCATION</h2>
+            </div>
+            <div class="divider"></div>
+            
+            {% for edu in data.education %}
+            <div class="education-container">
+                <div class="education-left">
+                    <div class="education-title">{{ edu.course }}</div>
+                    <div class="education-subtitle">{{ edu.college }}</div>
+                </div>
+                <div class="education-right">
+                    <div class="graduation-date">Graduated, {{ edu.graduation }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Achievements -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon">
+                    <i>a</i>
+                </div>
+                <h2 class="section-heading">ACHIEVEMENTS</h2>
+            </div>
+            <div class="divider"></div>
+            
+            <ul class="achievements-list">
+                {% for achievement in data.achievements %}
+                <li>{{ achievement }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon">
+                    <i>s</i>
+                </div>
+                <h2 class="section-heading">PERSONAL SKILLS</h2>
+            </div>
+            <div class="divider"></div>
+            
+            <ul class="skills-list">
+                {% for skill in data.skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- Personal Details -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon">
+                    <i>p</i>
+                </div>
+                <h2 class="section-heading">PERSONAL DETAILS</h2>
+            </div>
+            <div class="divider"></div>
+            
+            <div class="personal-info">
+                <div><strong>Father's Name:</strong> {{ data.fname }}</div>
+                <div><strong>Mother's Name:</strong> {{ data.mname }}</div>
+                <div><strong>Permanent Address:</strong> {{ data.paddress }}</div>
+            </div>
+        </div>
+        
+        <!-- Declaration -->
+        <div class="declaration">
+            <h3>Declaration</h3>
+            <p>I, {{ data.name }}, hereby declare that all the information provided above are correct and complete to the best of my knowledge and belief. I understand that if any time it is found that any information given is false, my appointment is liable to be cancelled.</p>
+            
+            <div class="signature">
+                <div class="left">
+                    <div class="signature-line"></div>
+                    <div>{{ data.name }}</div>
+                </div>
+                <div class="right">
+                    <div>{{ data.city }}, {{ data.state }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            1/1
+        </div>
+    </div>
+</body>
+</html>

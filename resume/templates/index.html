@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Builder - Create Professional Resumes</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .auth-buttons {
+            margin-left: 15px;
+        }
+        .auth-buttons a {
+            margin-left: 10px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>RESUME BUILDER</h2>
+                <p>Professional Resume Creation Tool</p>
+            </div>
+            <div class="nav_button_right auth-buttons">
+                {% if 'user_id' in session %}
+                    <span style="color: white; margin-right: 15px;">Welcome, {{ session['username'] }}!</span>
+                    <a href="/logout" class="btn btn-outline-light">Logout</a>
+                {% else %}
+                    <a href="/login" class="btn btn-light">Login</a>
+                    <a href="/signup" class="btn btn-outline-light">Sign Up</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>BUILD YOUR PROFESSIONAL RESUME</h1>
+                    <h4>QUICK, EASY, AND EFFECTIVE</h4>
+                    <p>Create impressive resumes in minutes with our professional templates and easy-to-use builder.</p>
+                    <a href="/resume_template" class="btn btn-danger btn-lg">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Why Choose Our Resume Builder</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Professional Templates</h4>
+                        <p>Choose from our collection of ATS-friendly resume templates designed by HR professionals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Quick & Easy</h4>
+                        <p>Build your resume in just minutes with our intuitive and user-friendly interface.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h4>PDF Download</h4>
+                        <p>Download your resume as a professional PDF ready to be shared with employers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="benefits-section">
+        <div class="container text-center">
+            <h2>Start Building Your Resume Today</h2>
+            <p class="mb-4">Our resume builder helps you create a professional, ATS-friendly resume that will get you noticed.</p>
+            <a href="/resume_template" class="btn btn-primary btn-lg">View All Templates</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Resume Builder</h4>
+                    <p>Create professional resumes that stand out and get you noticed by employers.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/resume_template">Templates</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> kwalitytimekumar2006@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../static/js/jquery-2.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
