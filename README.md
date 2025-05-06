@@ -4,6 +4,12 @@
 
 Resume Builder is a responsive web application designed to help users create professional resumes effortlessly. The application allows users to input their personal information, education, work experience, projects, and skills, and dynamically generates a polished resume in a downloadable PDF format.
 
+---
+<img width="245" alt="Image" src="https://github.com/user-attachments/assets/59ed7277-a1af-4b62-bfab-09287266de71" />
+---
+<img width="279" alt="Image" src="https://github.com/user-attachments/assets/5d9ce249-9290-4c68-8141-9c7f138ee3a5" />
+---
+
 ## ✨ Features
 
 - **User-Friendly Interface**: Intuitive design for easy input of resume details.
